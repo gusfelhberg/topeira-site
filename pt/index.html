@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Topeira</title>
+<meta name="description" content="O Studio Topeira faz jogos pequenos e bem cuidados. O primeiro: Iara: River of Lanterns.">
+<meta property="og:title" content="Studio Topeira">
+<meta property="og:description" content="O Studio Topeira faz jogos pequenos e bem cuidados. O primeiro: Iara: River of Lanterns.">
+<meta property="og:image" content="https://studiotopeira.com/assets/iara-splash.jpg">
+<link rel="icon" href="../assets/iara-icon.png">
+<style>
+@font-face { font-family: "Amatic SC"; src: url("../assets/AmaticSC-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+:root { --bg:#0b1418; --panel:#12212a; --rule:#22343c; --fg:#e9eef0; --muted:#9db0b6; --gold:#ffe3a8; --ember:#f08a3c; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; background:var(--bg); color:var(--fg); -webkit-text-size-adjust:100%;
+       font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+a { color:var(--gold); }
+.wrap { max-width:66rem; margin:0 auto; padding:0 20px; }
+header.top { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+.mark { display:flex; align-items:center; gap:10px; color:var(--gold); text-decoration:none;
+        font:700 2rem/1 "Amatic SC",sans-serif; letter-spacing:.04em; }
+.mark svg { width:34px; height:34px; }
+header.top nav a { color:var(--muted); text-decoration:none; font-size:.9rem; margin-left:18px; }
+header.top nav a:hover { color:var(--gold); }
+.hero { padding:9vh 0 8vh; text-align:center; }
+.hero h1 { font:700 clamp(3.2rem,11vw,6.5rem)/.95 "Amatic SC",sans-serif; color:var(--gold); margin:0 0 .35em; letter-spacing:.03em; }
+.hero p { max-width:34rem; margin:0 auto; color:var(--muted); font-size:1.12rem; }
+.game { background:var(--panel); border:1px solid var(--rule); border-radius:26px; overflow:hidden;
+        display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); }
+.game .art { min-height:420px; background:url("../assets/iara-splash.jpg") center 30%/cover; }
+.game .txt { padding:38px 38px 34px; }
+.kicker { text-transform:uppercase; letter-spacing:.16em; font-size:.74rem; color:var(--ember); margin:0 0 10px; }
+.title { display:flex; align-items:center; gap:16px; margin:0 0 14px; }
+.title img { width:68px; height:68px; border-radius:16px; }
+.title h2 { font:700 clamp(2.4rem,6vw,3.4rem)/1 "Amatic SC",sans-serif; color:var(--gold); margin:0; }
+.game p { margin:0 0 14px; }
+.facts { list-style:none; padding:0; margin:18px 0 24px; display:flex; flex-wrap:wrap; gap:8px; }
+.facts li { border:1px solid var(--rule); border-radius:999px; padding:4px 13px; font-size:.86rem; color:var(--muted); }
+.cta { display:inline-block; border:1.5px solid var(--gold); color:var(--gold); border-radius:999px; padding:10px 24px;
+       font:700 1.5rem/1 "Amatic SC",sans-serif; letter-spacing:.05em; text-decoration:none; }
+span.cta { opacity:.75; }
+.shots { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:28px 0 0; }
+.shots img { width:100%; height:auto; border-radius:20px; border:1px solid var(--rule); display:block; }
+section.about { padding:9vh 0 2vh; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:26px; }
+section.about h3 { font:700 2rem/1.1 "Amatic SC",sans-serif; color:var(--gold); margin:0 0 8px; letter-spacing:.03em; }
+section.about p { margin:0; color:var(--muted); font-size:.98rem; }
+footer { border-top:1px solid var(--rule); margin-top:9vh; padding:26px 0 46px; color:var(--muted); font-size:.88rem;
+         display:flex; flex-wrap:wrap; gap:8px 22px; justify-content:space-between; }
+footer a { color:var(--muted); }
+main.doc { max-width:44rem; margin:0 auto; padding:3vh 20px 4vh; }
+main.doc h1 { font:700 3rem/1.05 "Amatic SC",sans-serif; color:var(--gold); margin:.4em 0 .3em; }
+main.doc h2 { font-size:1.08rem; margin:2.2rem 0 .5rem; color:var(--fg); }
+main.doc p, main.doc li { color:#c9d4d8; }
+@media (max-width: 760px) {
+  .game { grid-template-columns:1fr; }
+  .game .art { min-height:300px; }
+  .game .txt { padding:26px 22px; }
+  .shots { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  section.about { grid-template-columns:1fr; }
+  header.top nav a:not(.lang) { display:none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap"><header class="top"><a class="mark" href="../"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M2 27c3-1 5-11 15-11s12 10 15 11z" fill="#ffe3a8"/><circle cx="17" cy="9" r="3.2" fill="#f08a3c"/><circle cx="17" cy="9" r="6" fill="#f08a3c" opacity=".25"/></svg>Topeira</a><nav><a href="#iara">Iara</a><a href="#studio">O estúdio</a><a href="mailto:hello@studiotopeira.com">Contato</a><a class="lang" href="../">English</a></nav></header></div>
+<div class="wrap">
+<section class="hero"><h1>Jogos pequenos, feitos com cuidado</h1><p>O Studio Topeira é um estúdio de uma pessoa só. Faz jogos tranquilos sobre lugares de verdade, sem anúncios e sem nada que fique seguindo você.</p></section>
+<section id="iara">
+  <div class="game">
+    <div class="art" role="img" aria-label="Iara"></div>
+    <div class="txt">
+      <p class="kicker">O primeiro jogo</p>
+      <div class="title"><img src="../assets/iara-icon.png" alt=""><h2>Iara: River of Lanterns</h2></div>
+      <p>Leve uma lanterna por cinco rios de verdade da Amazônia até a Iara, a guardiã das águas no folclore brasileiro.</p>
+      <p>Um toque empurra a lanterna. Sapos, jacarés, onças e o boto-cor-de-rosa aparecem cada um no rio onde realmente vivem, e cada rio conta algo verdadeiro sobre ele. No modo Zen o rio está escuro, nada ataca, e a sua luz desperta o que vive ali.</p>
+      <ul class="facts"><li>iPhone</li><li>Grátis</li><li>25 rios</li><li>Sem anúncios, sem compras</li><li>Sem conta</li><li>English · Português</li></ul>
+      <span class="cta">Em breve na App Store</span>
+    </div>
+  </div>
+  <div class="shots"><img src="../assets/iara-pt-1.jpg" alt="Telas de Iara: River of Lanterns 1" loading="lazy" width="507" height="1100"><img src="../assets/iara-pt-2.jpg" alt="Telas de Iara: River of Lanterns 2" loading="lazy" width="507" height="1100"><img src="../assets/iara-pt-3.jpg" alt="Telas de Iara: River of Lanterns 3" loading="lazy" width="507" height="1100"><img src="../assets/iara-pt-4.jpg" alt="Telas de Iara: River of Lanterns 4" loading="lazy" width="507" height="1100"></div>
+</section>
+<section class="about" id="studio"><div><h3>Topeira</h3><p>É o bicho pequeno que trabalha escondido e cava com paciência. É mais ou menos assim que o estúdio trabalha.</p></div><div><h3>Como os jogos são feitos</h3><p>Uma pessoa só, no Canadá, nascida no Brasil. Cada animal, planta e fato de um jogo é conferido em uma fonte antes de entrar.</p></div><div><h3>O que eles nunca fazem</h3><p>Nada de anúncios, rastreamento ou contas. O Iara 1.0 não envia nada do seu celular.</p></div></section>
+</div>
+<div class="wrap"><footer><span>© 2026 Studio Topeira</span><span><a href="mailto:hello@studiotopeira.com">hello@studiotopeira.com</a> &nbsp;·&nbsp; <a href="../iara/privacy/">Privacidade</a> &nbsp;·&nbsp; <a href="../iara/support/">Suporte</a></span></footer></div>
+</body>
+</html>
