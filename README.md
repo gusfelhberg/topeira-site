@@ -8,5 +8,7 @@ The studio's site: a landing page (English at `/`, Portuguese at `/pt/`) and Iar
 - Preview: `python3 -m http.server 8765` in this folder, then open http://localhost:8765.
 - The font (Amatic SC, SIL Open Font License) and the images are served from `assets/`; nothing loads from another site.
 
-Not published yet (2026-10-03): hosting and the domain's DNS are the owner's steps. See `studio/apps/iara/README.md`
-and `company/DECISIONS.md` in the `hq` repository.
+Live at https://studiotopeira.com since 2026-10-03, served by GitHub Pages from this repository's `main` branch (the
+repository is public for that reason). A push to `main` publishes within a minute. DNS is at Cloudflare (the account
+that came with the iCloud purchase): CNAME `@` and `www` to `gusfelhberg.github.io`, both "DNS only"; the MX, TXT and
+`sig1._domainkey` records there are iCloud Mail's and must stay.
