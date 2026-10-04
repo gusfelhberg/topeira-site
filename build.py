@@ -72,34 +72,34 @@ MARK = ('<svg viewBox="0 0 34 34" aria-hidden="true"><path d="M2 27c3-1 5-11 15-
 T = {
     "en": dict(
         lang="en", base="", en_href="./", br_href="pt/",
-        title="Studio Topeira", desc="Studio Topeira makes simple, carefully made apps and games. First: Iara: River of Lanterns.",
-        nav=[("#iara", "Iara"), ("#studio", "The studio"), ("mailto:" + EMAIL, "Contact")],
-        h1="Simple apps, made with care",
-        lead="Studio Topeira is a one-person studio. It makes simple apps and games that do one thing well, with no ads and nothing that follows you around.",
-        kicker="The first one: a game", name="Iara: River of Lanterns",
+        title="Studio Topeira", desc="Studio Topeira designs and builds apps and games for iPhone. Our first release is Iara: River of Lanterns.",
+        nav=[("#iara", "Iara"), ("#studio", "About"), ("mailto:" + EMAIL, "Contact")],
+        h1="Studio Topeira",
+        lead="We design and build apps and games for iPhone. Our first release is Iara: River of Lanterns.",
+        kicker="Our first release", name="Iara: River of Lanterns",
         p1="Guide a lantern up five real rivers of the Amazon and bring it home to Iara, the keeper of the waters in Brazilian folklore.",
         p2="One tap pushes the lantern. Frogs, caimans, jaguars and the pink river dolphin are each on the river where they really live, and every river tells you something true about it. In Zen the river is dark, nothing strikes, and your light wakes what lives there.",
         facts=["iPhone", "Free", "25 rivers", "No ads, no purchases", "No account", "English · Português"],
         soon="Coming soon to the App Store", get="Get it on the App Store", shots="Screenshots of Iara: River of Lanterns",
-        about=[("Topeira", "It means \"mole\" in Portuguese: a small animal that works out of sight and digs patiently. That is roughly how the studio works."),
-               ("How they are made", "Slowly, and checked: every animal, plant and fact in Iara was verified against a source before it went in."),
-               ("What they never do", "No advertising, no tracking, no accounts. Iara 1.0 sends nothing from your phone at all.")],
+        about=[("What we do", "We make apps and games for iPhone, each built around one clear idea. New titles are in development."),
+               ("How we work", "We research before we build and test before we release. In Iara, every animal, plant and fact was verified against a source before it went in."),
+               ("Privacy", "Our products carry no advertising and no tracking, and need no account. Iara 1.0 sends nothing from your phone.")],
         contact="Contact", privacy="Privacy", support="Support", rights="© 2026 Studio Topeira",
     ),
     "pt": dict(
         lang="pt-BR", base="../", en_href="../", br_href="./",
-        title="Studio Topeira", desc="O Studio Topeira faz apps e jogos simples e bem cuidados. O primeiro: Iara: River of Lanterns.",
-        nav=[("#iara", "Iara"), ("#studio", "O estúdio"), ("mailto:" + EMAIL, "Contato")],
-        h1="Apps simples, feitos com cuidado",
-        lead="O Studio Topeira é um estúdio de uma pessoa só. Faz apps e jogos simples que fazem bem uma coisa só, sem anúncios e sem nada que fique seguindo você.",
-        kicker="O primeiro: um jogo", name="Iara: River of Lanterns",
+        title="Studio Topeira", desc="O Studio Topeira cria e desenvolve apps e jogos para iPhone. Nosso primeiro lançamento é Iara: River of Lanterns.",
+        nav=[("#iara", "Iara"), ("#studio", "Sobre"), ("mailto:" + EMAIL, "Contato")],
+        h1="Studio Topeira",
+        lead="Criamos e desenvolvemos apps e jogos para iPhone. Nosso primeiro lançamento é Iara: River of Lanterns.",
+        kicker="Nosso primeiro lançamento", name="Iara: River of Lanterns",
         p1="Leve uma lanterna por cinco rios de verdade da Amazônia até a Iara, a guardiã das águas no folclore brasileiro.",
         p2="Um toque empurra a lanterna. Sapos, jacarés, onças e o boto-cor-de-rosa aparecem cada um no rio onde realmente vivem, e cada rio conta algo verdadeiro sobre ele. No modo Zen o rio está escuro, nada ataca, e a sua luz desperta o que vive ali.",
         facts=["iPhone", "Grátis", "25 rios", "Sem anúncios, sem compras", "Sem conta", "English · Português"],
         soon="Em breve na App Store", get="Baixar na App Store", shots="Telas de Iara: River of Lanterns",
-        about=[("Topeira", "É o bicho pequeno que trabalha escondido e cava com paciência. É mais ou menos assim que o estúdio trabalha."),
-               ("Como eles são feitos", "Devagar e conferindo: cada animal, planta e fato do Iara foi verificado em uma fonte antes de entrar."),
-               ("O que eles nunca fazem", "Nada de anúncios, rastreamento ou contas. O Iara 1.0 não envia nada do seu celular.")],
+        about=[("O que fazemos", "Fazemos apps e jogos para iPhone, cada um construído em torno de uma ideia clara. Novos títulos estão em desenvolvimento."),
+               ("Como trabalhamos", "Pesquisamos antes de construir e testamos antes de lançar. No Iara, cada animal, planta e fato foi verificado em uma fonte antes de entrar."),
+               ("Privacidade", "Nossos produtos não têm anúncios nem rastreamento, e não pedem conta. O Iara 1.0 não envia nada do seu celular.")],
         contact="Contato", privacy="Privacidade", support="Suporte", rights="© 2026 Studio Topeira",
     ),
 }
@@ -190,7 +190,7 @@ PRIVACY = f"""<h1>Privacy Policy: Iara: River of Lanterns</h1>
 <p>Questions about this policy or the app: <a href="mailto:{EMAIL}">{EMAIL}</a></p>"""
 
 SUPPORT = f"""<h1>Support: Iara: River of Lanterns</h1>
-<p>Email <a href="mailto:{EMAIL}">{EMAIL}</a> and, if you can, say which iPhone and iOS version you have. Every message is read.</p>
+<p>Email <a href="mailto:{EMAIL}">{EMAIL}</a> and, if you can, tell us which iPhone and iOS version you have. We read every message.</p>
 <h2>Does the game need an internet connection?</h2>
 <p>No. It works fully offline and version 1.0 makes no network calls at all.</p>
 <h2>Is there an account, a subscription or anything to buy?</h2>
@@ -198,7 +198,7 @@ SUPPORT = f"""<h1>Support: Iara: River of Lanterns</h1>
 <h2>How do I delete my data?</h2>
 <p>Delete the app. Everything it remembers is stored on your device, so removing the app removes all of it.</p>
 <h2>A river feels impossible</h2>
-<p>Zen mode has the same rivers with nothing that strikes. If a spot in Play really cannot be passed, please write and say which river: that is a bug, and it will be fixed.</p>
+<p>Zen mode has the same rivers with nothing that strikes. If a spot in Play really cannot be passed, please write and tell us which river: that is a bug, and we will fix it.</p>
 <h2>How do I change the language?</h2>
 <p>In the game's Settings (the gear on the first screen): English or Português.</p>"""
 
