@@ -22,6 +22,10 @@ header.top { display:flex; align-items:center; justify-content:space-between; pa
 .mark svg { width:34px; height:34px; }
 header.top nav a { color:var(--muted); text-decoration:none; font-size:.9rem; margin-left:18px; }
 header.top nav a:hover { color:var(--gold); }
+header.top nav { display:flex; align-items:center; }
+.switch { display:inline-flex; margin-left:20px; border:1px solid var(--rule); border-radius:999px; padding:3px; }
+.switch a, .switch span { margin:0 !important; padding:4px 12px; border-radius:999px; font-size:.8rem; font-weight:600; letter-spacing:.06em; text-decoration:none; color:var(--muted); }
+.switch .on { background:var(--gold); color:#0b1418; }
 .hero { padding:9vh 0 8vh; text-align:center; }
 .hero h1 { font:700 clamp(3.2rem,11vw,6.5rem)/.95 "Amatic SC",sans-serif; color:var(--gold); margin:0 0 .35em; letter-spacing:.03em; }
 .hero p { max-width:34rem; margin:0 auto; color:var(--muted); font-size:1.12rem; }
@@ -57,7 +61,7 @@ main.doc p, main.doc li { color:#c9d4d8; }
   .game .txt { padding:26px 22px; }
   .shots { grid-template-columns:repeat(2,minmax(0,1fr)); }
   section.about { grid-template-columns:1fr; }
-  header.top nav a:not(.lang) { display:none; }
+  header.top nav > a { display:none; }
 }
 """
 
@@ -67,7 +71,7 @@ MARK = ('<svg viewBox="0 0 34 34" aria-hidden="true"><path d="M2 27c3-1 5-11 15-
 
 T = {
     "en": dict(
-        lang="en", base="", other=("pt/", "Português"), home="./",
+        lang="en", base="", en_href="./", br_href="pt/",
         title="Studio Topeira", desc="Studio Topeira makes small, carefully made apps and games. First: Iara: River of Lanterns.",
         nav=[("#iara", "Iara"), ("#studio", "The studio"), ("mailto:" + EMAIL, "Contact")],
         h1="Small apps, made with care",
@@ -78,12 +82,12 @@ T = {
         facts=["iPhone", "Free", "25 rivers", "No ads, no purchases", "No account", "English · Português"],
         soon="Coming soon to the App Store", get="Get it on the App Store", shots="Screenshots of Iara: River of Lanterns",
         about=[("Topeira", "It means \"mole\" in Portuguese: a small animal that works out of sight and digs patiently. That is roughly how the studio works."),
-               ("How they are made", "One person, in Canada, born in Brazil. Slowly, and checked: every animal, plant and fact in Iara was verified against a source before it went in."),
+               ("How they are made", "Slowly, and checked: every animal, plant and fact in Iara was verified against a source before it went in."),
                ("What they never do", "No advertising, no tracking, no accounts. Iara 1.0 sends nothing from your phone at all.")],
         contact="Contact", privacy="Privacy", support="Support", rights="© 2026 Studio Topeira",
     ),
     "pt": dict(
-        lang="pt-BR", base="../", other=("../", "English"), home="./",
+        lang="pt-BR", base="../", en_href="../", br_href="./",
         title="Studio Topeira", desc="O Studio Topeira faz apps e jogos pequenos e bem cuidados. O primeiro: Iara: River of Lanterns.",
         nav=[("#iara", "Iara"), ("#studio", "O estúdio"), ("mailto:" + EMAIL, "Contato")],
         h1="Apps pequenos, feitos com cuidado",
@@ -94,7 +98,7 @@ T = {
         facts=["iPhone", "Grátis", "25 rios", "Sem anúncios, sem compras", "Sem conta", "English · Português"],
         soon="Em breve na App Store", get="Baixar na App Store", shots="Telas de Iara: River of Lanterns",
         about=[("Topeira", "É o bicho pequeno que trabalha escondido e cava com paciência. É mais ou menos assim que o estúdio trabalha."),
-               ("Como eles são feitos", "Uma pessoa só, no Canadá, nascida no Brasil. Devagar e conferindo: cada animal, planta e fato do Iara foi verificado em uma fonte antes de entrar."),
+               ("Como eles são feitos", "Devagar e conferindo: cada animal, planta e fato do Iara foi verificado em uma fonte antes de entrar."),
                ("O que eles nunca fazem", "Nada de anúncios, rastreamento ou contas. O Iara 1.0 não envia nada do seu celular.")],
         contact="Contato", privacy="Privacidade", support="Suporte", rights="© 2026 Studio Topeira",
     ),
@@ -119,10 +123,19 @@ def head(t, title, base):
 """
 
 
+def switch(t):
+    """EN | BR at the top right: the language showing is filled, the other is a link."""
+    en = t["lang"] == "en"
+    def side(label, name, href, on):
+        return (f'<span class="on" aria-current="true" title="{name}">{label}</span>' if on
+                else f'<a href="{href}" hreflang="{"en" if label == "EN" else "pt-BR"}" title="{name}">{label}</a>')
+    return f'<span class="switch" role="group" aria-label="Language">{side("EN", "English", t["en_href"], en)}{side("BR", "Português (Brasil)", t["br_href"], not en)}</span>'
+
+
 def top(t, base, nav=True):
     links = "".join(f'<a href="{h}">{n}</a>' for h, n in t["nav"]) if nav else ""
     return (f'<div class="wrap"><header class="top"><a class="mark" href="{base or "./"}">{MARK}Topeira</a>'
-            f'<nav>{links}<a class="lang" href="{t["other"][0]}">{t["other"][1]}</a></nav></header></div>\n')
+            f'<nav>{links}{switch(t)}</nav></header></div>\n')
 
 
 def foot(t, base):
@@ -191,7 +204,7 @@ SUPPORT = f"""<h1>Support: Iara: River of Lanterns</h1>
 
 
 def doc(body, title):
-    t = dict(T["en"], base="../../", other=("../../pt/", "Português"))
+    t = dict(T["en"], base="../../", en_href="./", br_href="../../pt/")
     return head(t, title, "../../") + top(t, "../../", nav=False) + f'<main class="doc">\n{body}\n</main>\n' + foot(t, "../../")
 
 

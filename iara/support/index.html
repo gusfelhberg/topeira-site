@@ -24,6 +24,10 @@ header.top { display:flex; align-items:center; justify-content:space-between; pa
 .mark svg { width:34px; height:34px; }
 header.top nav a { color:var(--muted); text-decoration:none; font-size:.9rem; margin-left:18px; }
 header.top nav a:hover { color:var(--gold); }
+header.top nav { display:flex; align-items:center; }
+.switch { display:inline-flex; margin-left:20px; border:1px solid var(--rule); border-radius:999px; padding:3px; }
+.switch a, .switch span { margin:0 !important; padding:4px 12px; border-radius:999px; font-size:.8rem; font-weight:600; letter-spacing:.06em; text-decoration:none; color:var(--muted); }
+.switch .on { background:var(--gold); color:#0b1418; }
 .hero { padding:9vh 0 8vh; text-align:center; }
 .hero h1 { font:700 clamp(3.2rem,11vw,6.5rem)/.95 "Amatic SC",sans-serif; color:var(--gold); margin:0 0 .35em; letter-spacing:.03em; }
 .hero p { max-width:34rem; margin:0 auto; color:var(--muted); font-size:1.12rem; }
@@ -59,12 +63,12 @@ main.doc p, main.doc li { color:#c9d4d8; }
   .game .txt { padding:26px 22px; }
   .shots { grid-template-columns:repeat(2,minmax(0,1fr)); }
   section.about { grid-template-columns:1fr; }
-  header.top nav a:not(.lang) { display:none; }
+  header.top nav > a { display:none; }
 }
 </style>
 </head>
 <body>
-<div class="wrap"><header class="top"><a class="mark" href="../../"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M2 27c3-1 5-11 15-11s12 10 15 11z" fill="#ffe3a8"/><circle cx="17" cy="9" r="3.2" fill="#f08a3c"/><circle cx="17" cy="9" r="6" fill="#f08a3c" opacity=".25"/></svg>Topeira</a><nav><a class="lang" href="../../pt/">Português</a></nav></header></div>
+<div class="wrap"><header class="top"><a class="mark" href="../../"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M2 27c3-1 5-11 15-11s12 10 15 11z" fill="#ffe3a8"/><circle cx="17" cy="9" r="3.2" fill="#f08a3c"/><circle cx="17" cy="9" r="6" fill="#f08a3c" opacity=".25"/></svg>Topeira</a><nav><span class="switch" role="group" aria-label="Language"><span class="on" aria-current="true" title="English">EN</span><a href="../../pt/" hreflang="pt-BR" title="Português (Brasil)">BR</a></span></nav></header></div>
 <main class="doc">
 <h1>Support: Iara: River of Lanterns</h1>
 <p>Email <a href="mailto:hello@studiotopeira.com">hello@studiotopeira.com</a> and, if you can, say which iPhone and iOS version you have. Every message is read.</p>
