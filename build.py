@@ -45,6 +45,16 @@ header.top nav { display:flex; align-items:center; }
 span.cta { opacity:.75; }
 .shots { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:28px 0 0; }
 .shots img { width:100%%; height:auto; border-radius:20px; border:1px solid var(--rule); display:block; }
+#more { padding:9vh 0 0; }
+h2.more { font:700 clamp(2.6rem,7vw,4rem)/1 "Amatic SC",sans-serif; color:var(--gold); margin:0 0 .3em; letter-spacing:.03em; }
+.morelead { max-width:40rem; color:var(--muted); margin:0 0 26px; }
+.packs { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.pack { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--rule); background:var(--panel); }
+.pack img { display:block; width:100%%; height:320px; object-fit:cover; }
+.pack .ptxt { padding:16px 18px 18px; }
+.pack h3 { font:700 2.1rem/1.05 "Amatic SC",sans-serif; color:var(--gold); margin:0 0 6px; letter-spacing:.03em; }
+.pack p { margin:0; font-size:.95rem; }
+.pack .waters { color:var(--muted); font-size:.8rem; margin-top:8px; }
 section.about { padding:9vh 0 2vh; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:26px; }
 section.about h3 { font:700 2rem/1.1 "Amatic SC",sans-serif; color:var(--gold); margin:0 0 8px; letter-spacing:.03em; }
 section.about p { margin:0; color:var(--muted); font-size:.98rem; }
@@ -61,6 +71,8 @@ main.doc p, main.doc li { color:#c9d4d8; }
   .game .txt { padding:26px 22px; }
   .shots { grid-template-columns:repeat(2,minmax(0,1fr)); }
   section.about { grid-template-columns:1fr; }
+  .packs { grid-template-columns:1fr; }
+  .pack img { height:240px; }
   header.top nav > a { display:none; }
 }
 """
@@ -73,9 +85,11 @@ T = {
     "en": dict(
         lang="en", base="", en_href="./", br_href="pt/",
         title="Studio Topeira", desc="Studio Topeira designs and builds apps and games for iPhone. Our first release is Iara: River of Lanterns.",
-        nav=[("#iara", "Iara"), ("#studio", "About"), ("mailto:" + EMAIL, "Contact")],
+        nav=[("#iara", "Iara"), ("#more", "More rivers"), ("#studio", "About"), ("mailto:" + EMAIL, "Contact")],
         h1="Studio Topeira",
         lead="We design and build apps and games for iPhone. Our first release is Iara: River of Lanterns.",
+        more_kicker="Coming to Iara", more_title="More rivers",
+        more_lead="After the Amazon, the lantern travels on: six journeys of 25 rivers each, across Brazil and South America. Every one a real place, with what really lives there.",
         kicker="Our first release", name="Iara: River of Lanterns",
         p1="Guide a lantern up five real rivers of the Amazon and bring it home to Iara, the keeper of the waters in Brazilian folklore.",
         p2="One tap pushes the lantern. Frogs, caimans, jaguars and the pink river dolphin are each on the river where they really live, and every river tells you something true about it. In Zen the river is dark, nothing strikes, and your light wakes what lives there.",
@@ -89,9 +103,11 @@ T = {
     "pt": dict(
         lang="pt-BR", base="../", en_href="../", br_href="./",
         title="Studio Topeira", desc="O Studio Topeira cria e desenvolve apps e jogos para iPhone. Nosso primeiro lançamento é Iara: River of Lanterns.",
-        nav=[("#iara", "Iara"), ("#studio", "Sobre"), ("mailto:" + EMAIL, "Contato")],
+        nav=[("#iara", "Iara"), ("#more", "Mais rios"), ("#studio", "Sobre"), ("mailto:" + EMAIL, "Contato")],
         h1="Studio Topeira",
         lead="Criamos e desenvolvemos apps e jogos para iPhone. Nosso primeiro lançamento é Iara: River of Lanterns.",
+        more_kicker="Em breve no Iara", more_title="Mais rios",
+        more_lead="Depois da Amazônia, a lanterna segue viagem: seis jornadas de 25 rios cada, pelo Brasil e pela América do Sul. Cada uma um lugar de verdade, com o que realmente vive ali.",
         kicker="Nosso primeiro lançamento", name="Iara: River of Lanterns",
         p1="Leve uma lanterna por cinco rios de verdade da Amazônia até a Iara, a guardiã das águas no folclore brasileiro.",
         p2="Um toque empurra a lanterna. Sapos, jacarés, onças e o boto-cor-de-rosa aparecem cada um no rio onde realmente vivem, e cada rio conta algo verdadeiro sobre ele. No modo Zen o rio está escuro, nada ataca, e a sua luz desperta o que vive ali.",
@@ -143,11 +159,33 @@ def foot(t, base):
             f'<a href="{base}iara/privacy/">{t["privacy"]}</a> &nbsp;·&nbsp; <a href="{base}iara/support/">{t["support"]}</a></span></footer></div>\n</body>\n</html>\n')
 
 
+# The expansion packs, as a tease (owner, 2026-10-04): a painting, a name, a line and the five waters. No dates, no
+# prices, no list of animals. (id, English name, Portuguese name, English line, Portuguese line, the five waters)
+PACKS = [
+    ("amazonia2", "Amazônia II", "Amazônia II", "The lakes, the rapids, the mud and the sea", "Os lagos, as corredeiras, a lama e o mar",
+     "Mamirauá · Xingu · Madeira · Marajó · Rio Branco"),
+    ("pantanal", "Pantanal", "Pantanal", "The largest wetland on Earth", "A maior planície alagável do mundo",
+     "Rio Paraguai · Rio Cuiabá · Rio Miranda · Baías e corixos · Nhecolândia"),
+    ("brasil", "Waters of Brazil", "Águas do Brasil", "From the dry backlands to the great falls", "Do sertão às grandes cataratas",
+     "São Francisco · Araguaia · Bonito · Jalapão · Iguaçu"),
+    ("orinoco", "The Orinoco and the Guianas", "O Orinoco e as Guianas", "Granite, plains, a river of five colours", "Granito, planícies, um rio de cinco cores",
+     "Orinoco · Los Llanos · Caño Cristales · Canaima · Kaieteur"),
+    ("andes", "The Andes", "Os Andes", "The high lakes, the sacred river, the way down to the forest", "Os lagos do alto, o rio sagrado, a descida até a floresta",
+     "Titicaca · Laguna Colorada · Urubamba · Manu · Magdalena"),
+    ("sul", "The South", "O Sul", "From the marshes of Iberá to the glaciers", "Dos esteros do Iberá às geleiras",
+     "Iberá · Paraná · Uruguay · Valdivia · Patagonia"),
+]
+
+
 def home(code):
     t = T[code]; base = t["base"]
     cta = f'<a class="cta" href="{STORE}">{t["get"]}</a>' if STORE else f'<span class="cta">{t["soon"]}</span>'
     shots = "".join(f'<img src="{base}assets/iara-{code}-{k}.jpg" alt="{t["shots"]} {k}" loading="lazy" width="507" height="1100">' for k in (1, 2, 3, 4))
     about = "".join(f"<div><h3>{h}</h3><p>{p}</p></div>" for h, p in t["about"])
+    pt = code == "pt"
+    packs = "".join(f'<div class="pack"><img src="{base}assets/packs/{pid}.jpg" alt="" loading="lazy" width="514" height="900">'
+                    f'<div class="ptxt"><h3>{npt if pt else nen}</h3><p>{lpt if pt else len_}</p><p class="waters">{waters}</p></div></div>'
+                    for pid, nen, npt, len_, lpt, waters in PACKS)
     facts = "".join(f"<li>{f}</li>" for f in t["facts"])
     return (head(t, t["title"], base) + top(t, base) + f"""<div class="wrap">
 <section class="hero"><h1>{t['h1']}</h1><p>{t['lead']}</p></section>
@@ -164,6 +202,12 @@ def home(code):
     </div>
   </div>
   <div class="shots">{shots}</div>
+</section>
+<section id="more">
+  <p class="kicker">{t['more_kicker']}</p>
+  <h2 class="more">{t['more_title']}</h2>
+  <p class="morelead">{t['more_lead']}</p>
+  <div class="packs">{packs}</div>
 </section>
 <section class="about" id="studio">{about}</section>
 </div>
