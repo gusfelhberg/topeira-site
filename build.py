@@ -72,10 +72,10 @@ MARK = ('<svg viewBox="0 0 34 34" aria-hidden="true"><path d="M2 27c3-1 5-11 15-
 T = {
     "en": dict(
         lang="en", base="", en_href="./", br_href="pt/",
-        title="Studio Topeira", desc="Studio Topeira makes small, carefully made apps and games. First: Iara: River of Lanterns.",
+        title="Studio Topeira", desc="Studio Topeira makes simple, carefully made apps and games. First: Iara: River of Lanterns.",
         nav=[("#iara", "Iara"), ("#studio", "The studio"), ("mailto:" + EMAIL, "Contact")],
-        h1="Small apps, made with care",
-        lead="Studio Topeira is a one-person studio. It makes small apps and games that do one thing well, with no ads and nothing that follows you around.",
+        h1="Simple apps, made with care",
+        lead="Studio Topeira is a one-person studio. It makes simple apps and games that do one thing well, with no ads and nothing that follows you around.",
         kicker="The first one: a game", name="Iara: River of Lanterns",
         p1="Guide a lantern up five real rivers of the Amazon and bring it home to Iara, the keeper of the waters in Brazilian folklore.",
         p2="One tap pushes the lantern. Frogs, caimans, jaguars and the pink river dolphin are each on the river where they really live, and every river tells you something true about it. In Zen the river is dark, nothing strikes, and your light wakes what lives there.",
@@ -88,10 +88,10 @@ T = {
     ),
     "pt": dict(
         lang="pt-BR", base="../", en_href="../", br_href="./",
-        title="Studio Topeira", desc="O Studio Topeira faz apps e jogos pequenos e bem cuidados. O primeiro: Iara: River of Lanterns.",
+        title="Studio Topeira", desc="O Studio Topeira faz apps e jogos simples e bem cuidados. O primeiro: Iara: River of Lanterns.",
         nav=[("#iara", "Iara"), ("#studio", "O estúdio"), ("mailto:" + EMAIL, "Contato")],
-        h1="Apps pequenos, feitos com cuidado",
-        lead="O Studio Topeira é um estúdio de uma pessoa só. Faz apps e jogos pequenos que fazem bem uma coisa só, sem anúncios e sem nada que fique seguindo você.",
+        h1="Apps simples, feitos com cuidado",
+        lead="O Studio Topeira é um estúdio de uma pessoa só. Faz apps e jogos simples que fazem bem uma coisa só, sem anúncios e sem nada que fique seguindo você.",
         kicker="O primeiro: um jogo", name="Iara: River of Lanterns",
         p1="Leve uma lanterna por cinco rios de verdade da Amazônia até a Iara, a guardiã das águas no folclore brasileiro.",
         p2="Um toque empurra a lanterna. Sapos, jacarés, onças e o boto-cor-de-rosa aparecem cada um no rio onde realmente vivem, e cada rio conta algo verdadeiro sobre ele. No modo Zen o rio está escuro, nada ataca, e a sua luz desperta o que vive ali.",
