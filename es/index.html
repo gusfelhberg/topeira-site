@@ -43,8 +43,9 @@ header.top nav { display:flex; align-items:center; }
 .facts { list-style:none; padding:0; margin:18px 0 24px; display:flex; flex-wrap:wrap; gap:8px; }
 .facts li { border:1px solid var(--rule); border-radius:999px; padding:4px 13px; font-size:.86rem; color:var(--muted); }
 .cta { display:inline-block; border:1.5px solid var(--gold); color:var(--gold); border-radius:999px; padding:10px 24px;
-       font:700 1.5rem/1 "Amatic SC",sans-serif; letter-spacing:.05em; text-decoration:none; }
+       font:700 1.5rem/1.15 "Amatic SC",sans-serif; letter-spacing:.05em; text-decoration:none; text-align:center; }
 span.cta { opacity:.75; }
+.ctas { display:flex; flex-wrap:wrap; gap:10px; }
 .shots { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:28px 0 0; }
 .shots img { width:100%; height:auto; border-radius:20px; border:1px solid var(--rule); display:block; }
 #more, #rivers { padding:9vh 0 0; }
@@ -84,7 +85,7 @@ main.doc p, main.doc li { color:#c9d4d8; }
 </style>
 </head>
 <body>
-<div class="wrap"><header class="top"><a class="mark" href="../"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M2 27c3-1 5-11 15-11s12 10 15 11z" fill="#ffe3a8"/><circle cx="17" cy="9" r="3.2" fill="#f08a3c"/><circle cx="17" cy="9" r="6" fill="#f08a3c" opacity=".25"/></svg>Topeira</a><nav><a href="#iara">Iara</a><a href="#rivers">Ríos</a><a href="#more">Próximamente</a><a href="#studio">Nosotros</a><a href="mailto:hello@studiotopeira.com">Contacto</a><span class="switch" role="group" aria-label="Language"><a href="../" hreflang="en" title="English">EN</a><a href="../pt/" hreflang="pt-BR" title="Português (Brasil)">BR</a><span class="on" aria-current="true" title="Español">ES</span></span></nav></header></div>
+<div class="wrap"><header class="top"><a class="mark" href="../"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M2 27c3-1 5-11 15-11s12 10 15 11z" fill="#ffe3a8"/><circle cx="17" cy="9" r="3.2" fill="#f08a3c"/><circle cx="17" cy="9" r="6" fill="#f08a3c" opacity=".25"/></svg>Topeira</a><nav><a href="#iara">Iara</a><a href="#rivers">Ríos</a><a href="#more">Más ríos</a><a href="#studio">Nosotros</a><a href="mailto:hello@studiotopeira.com">Contacto</a><span class="switch" role="group" aria-label="Language"><a href="../" hreflang="en" title="English">EN</a><a href="../pt/" hreflang="pt-BR" title="Português (Brasil)">BR</a><span class="on" aria-current="true" title="Español">ES</span></span></nav></header></div>
 <div class="wrap">
 <section class="hero"><h1>Studio Topeira</h1><p>Diseñamos y desarrollamos apps y juegos. Nuestro primer lanzamiento es Iara: River of Lanterns.</p></section>
 <section id="iara">
@@ -95,25 +96,26 @@ main.doc p, main.doc li { color:#c9d4d8; }
       <div class="title"><img src="../assets/iara-icon.png" alt=""><h2>Iara: River of Lanterns</h2></div>
       <p>Guía una linterna por cinco ríos reales de la Amazonía y llévala a casa, hasta Iara, la guardiana de las aguas en el folclore brasileño.</p>
       <p>Un toque empuja la linterna. Ranas, caimanes, jaguares y el delfín rosado aparecen cada uno en el río donde realmente viven, y cada río te cuenta algo verdadero sobre él. En el modo Zen el río está a oscuras, nada ataca, y tu luz despierta lo que vive allí.</p>
-      <ul class="facts"><li>iPhone</li><li>Gratis</li><li>25 ríos</li><li>Sin anuncios, sin compras</li><li>Sin cuenta</li><li>English · Português</li><li>Español: próximamente</li></ul>
-      <span class="cta">Próximamente en el App Store</span>
+      <p>Los primeros 25 ríos son gratis. Más ríos se compran una sola vez dentro del juego: Hacia la noche (ríos 26 a 60: Igarapé, Serra y los cinco ríos de noche), seis travesías de 25 ríos cada una, o los 185 de una vez. El primer río de cada una se puede probar gratis.</p>
+      <ul class="facts"><li>iPhone y Android</li><li>Gratis para empezar: 25 ríos</li><li>Más ríos, compra única</li><li>Sin anuncios, sin suscripción</li><li>Sin cuenta</li><li>English · Português · Español</li></ul>
+      <span class="cta">Próximamente en el App Store y Google Play</span>
     </div>
   </div>
   <div class="shots"><img src="../assets/iara-es-1.jpg" alt="Capturas de Iara: River of Lanterns 1" loading="lazy" width="507" height="1100"><img src="../assets/iara-es-2.jpg" alt="Capturas de Iara: River of Lanterns 2" loading="lazy" width="507" height="1100"><img src="../assets/iara-es-3.jpg" alt="Capturas de Iara: River of Lanterns 3" loading="lazy" width="507" height="1100"><img src="../assets/iara-es-4.jpg" alt="Capturas de Iara: River of Lanterns 4" loading="lazy" width="507" height="1100"></div>
 </section>
 <section id="rivers">
-  <p class="kicker">En el juego ahora</p>
+  <p class="kicker">Gratis: los primeros 25 ríos</p>
   <h2 class="more">Cinco ríos de la Amazonía</h2>
   <p class="morelead">Veinticinco niveles en cinco aguas reales, cada una con su color, sus orillas y sus animales.</p>
   <div class="packs five"><div class="pack"><img src="../assets/rivers/varzea.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Várzea</h3><p>La selva que el río inunda cada año</p></div></div><div class="pack"><img src="../assets/rivers/negro.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Río Negro</h3><p>El río del color del té</p></div></div><div class="pack"><img src="../assets/rivers/tapajos.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Tapajós</h3><p>Agua clara y arena blanca</p></div></div><div class="pack"><img src="../assets/rivers/igapo.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Igapó</h3><p>Donde los árboles están de pie en el río</p></div></div><div class="pack"><img src="../assets/rivers/encontro.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Encuentro de las Aguas</h3><p>Dos ríos que no se mezclan</p></div></div></div>
 </section>
 <section id="more">
-  <p class="kicker">Próximamente</p>
+  <p class="kicker">Más ríos, en el juego</p>
   <h2 class="more">El viaje continúa</h2>
-  <p class="morelead">Después de la Amazonía, la linterna sigue su viaje: seis travesías de 25 ríos cada una, por Brasil y Sudamérica. Cada una es un lugar real, con lo que de verdad vive allí.</p>
+  <p class="morelead">Después de la Amazonía, la linterna sigue su viaje: seis travesías de 25 ríos cada una, por Brasil y Sudamérica. Cada una es un lugar real, con lo que de verdad vive allí. Cada travesía se compra una sola vez dentro del juego, y su primer río se puede probar gratis.</p>
   <div class="packs"><div class="pack"><img src="../assets/packs/amazonia2.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Amazonía II</h3><p>Los lagos, los rápidos, el barro y el mar</p><p class="waters">Mamirauá · Xingu · Madeira · Marajó · Rio Branco</p></div></div><div class="pack"><img src="../assets/packs/pantanal.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Pantanal</h3><p>El humedal más grande del mundo</p><p class="waters">Rio Paraguai · Rio Cuiabá · Rio Miranda · Baías e corixos · Nhecolândia</p></div></div><div class="pack"><img src="../assets/packs/brasil.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Aguas de Brasil</h3><p>Del sertón a las grandes cataratas</p><p class="waters">São Francisco · Araguaia · Bonito · Jalapão · Iguaçu</p></div></div><div class="pack"><img src="../assets/packs/orinoco.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>El Orinoco y las Guayanas</h3><p>Granito, llanos, un río de cinco colores</p><p class="waters">Orinoco · Los Llanos · Caño Cristales · Canaima · Kaieteur</p></div></div><div class="pack"><img src="../assets/packs/andes.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Los Andes</h3><p>Los lagos de altura, el río sagrado, la bajada a la selva</p><p class="waters">Titicaca · Laguna Colorada · Urubamba · Manu · Magdalena</p></div></div><div class="pack"><img src="../assets/packs/sul.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>El Sur</h3><p>De los esteros del Iberá a los glaciares</p><p class="waters">Iberá · Paraná · Uruguay · Valdivia · Patagonia</p></div></div></div>
 </section>
-<section class="about" id="studio"><div><h3>Qué hacemos</h3><p>Hacemos apps y juegos, cada uno construido en torno a una idea clara. Hay nuevos títulos en desarrollo.</p></div><div><h3>Cómo trabajamos</h3><p>Investigamos antes de construir y probamos antes de publicar. En Iara, cada animal, planta y dato se verificó con una fuente antes de entrar.</p></div><div><h3>Privacidad</h3><p>Nuestros productos no llevan publicidad ni rastreo, y no piden cuenta. Iara 1.0 no envía nada desde tu teléfono.</p></div></section>
+<section class="about" id="studio"><div><h3>Qué hacemos</h3><p>Hacemos apps y juegos, cada uno construido en torno a una idea clara. Hay nuevos títulos en desarrollo.</p></div><div><h3>Cómo trabajamos</h3><p>Investigamos antes de construir y probamos antes de publicar. En Iara, cada animal, planta y dato se verificó con una fuente antes de entrar.</p></div><div><h3>Privacidad</h3><p>Nuestros productos no llevan publicidad ni rastreo, y no piden cuenta. Iara no nos envía nada desde tu teléfono.</p></div></section>
 </div>
 <div class="wrap"><footer><span>© 2026 Studio Topeira</span><span><a href="mailto:hello@studiotopeira.com">hello@studiotopeira.com</a> &nbsp;·&nbsp; <a href="../iara/privacy/">Privacidad</a> &nbsp;·&nbsp; <a href="../iara/support/">Soporte</a></span></footer></div>
 </body>

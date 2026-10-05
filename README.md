@@ -1,10 +1,11 @@
 # studiotopeira.com
 
-The studio's site: a landing page (English at `/`, Portuguese at `/pt/`) and Iara's privacy and support pages
+The studio's site: a landing page (English at `/`, Portuguese at `/pt/`, Spanish at `/es/`) and Iara's privacy and support pages
 (`/iara/privacy/`, `/iara/support/`). Plain static files; no build step is needed to host it.
 
 - Change a text: edit `build.py` (the texts are at the top), run `python3 build.py`, commit the result.
-- When Iara is on the App Store: put its address in `STORE` in `build.py` and rebuild; the button becomes a link.
+- When Iara is on a store: put its address in `STORE_IOS` (App Store) or `STORE_ANDROID` (Google Play) in `build.py`
+  and rebuild; that store's button becomes a link, and the other still says "coming soon" until it has an address too.
 - Preview: `python3 -m http.server 8765` in this folder, then open http://localhost:8765.
 - The font (Amatic SC, SIL Open Font License) and the images are served from `assets/`; nothing loads from another site.
 
