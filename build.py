@@ -127,7 +127,8 @@ T = {
         contact="Contato", privacy="Privacidade", support="Suporte", rights="© 2026 Studio Topeira",
     ),
     # Spanish (owner, 2026-10-04): the site only. Iara 1.0 itself is in English and Portuguese; Spanish comes to the
-    # game with the next version, so the page says so and shows the English screenshots.
+    # game with the next version, so the page says so. Its screenshots are the game's own pictures
+    # with Spanish captions (studio-marketing, iara/store/shots/compose.py).
     "es": dict(
         lang="es", base="../", en_href="../", br_href="../pt/", es_href="./",
         title="Studio Topeira", desc="Studio Topeira diseña y desarrolla apps y juegos para iPhone. Nuestro primer lanzamiento es Iara: River of Lanterns.",
@@ -233,7 +234,7 @@ PACKS_ES = {'amazonia2': ('Amazonía II', 'Los lagos, los rápidos, el barro y e
 def home(code):
     t = T[code]; base = t["base"]
     cta = f'<a class="cta" href="{STORE}">{t["get"]}</a>' if STORE else f'<span class="cta">{t["soon"]}</span>'
-    shot = "en" if code == "es" else code          # no Spanish screenshots until the game ships in Spanish
+    shot = code
     shots = "".join(f'<img src="{base}assets/iara-{shot}-{k}.jpg" alt="{t["shots"]} {k}" loading="lazy" width="507" height="1100">' for k in (1, 2, 3, 4))
     about = "".join(f"<div><h3>{h}</h3><p>{p}</p></div>" for h, p in t["about"])
     pt = code == "pt"
