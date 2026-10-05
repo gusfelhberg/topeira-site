@@ -45,10 +45,13 @@ header.top nav { display:flex; align-items:center; }
 span.cta { opacity:.75; }
 .shots { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:28px 0 0; }
 .shots img { width:100%%; height:auto; border-radius:20px; border:1px solid var(--rule); display:block; }
-#more { padding:9vh 0 0; }
+#more, #rivers { padding:9vh 0 0; }
 h2.more { font:700 clamp(2.6rem,7vw,4rem)/1 "Amatic SC",sans-serif; color:var(--gold); margin:0 0 .3em; letter-spacing:.03em; }
 .morelead { max-width:40rem; color:var(--muted); margin:0 0 26px; }
 .packs { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.packs.five { grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; }
+.packs.five .pack img { height:260px; }
+.packs.five .pack h3 { font-size:1.7rem; }
 .pack { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--rule); background:var(--panel); }
 .pack img { display:block; width:100%%; height:320px; object-fit:cover; }
 .pack .ptxt { padding:16px 18px 18px; }
@@ -65,13 +68,14 @@ main.doc { max-width:44rem; margin:0 auto; padding:3vh 20px 4vh; }
 main.doc h1 { font:700 3rem/1.05 "Amatic SC",sans-serif; color:var(--gold); margin:.4em 0 .3em; }
 main.doc h2 { font-size:1.08rem; margin:2.2rem 0 .5rem; color:var(--fg); }
 main.doc p, main.doc li { color:#c9d4d8; }
+@media (max-width: 1040px) { .packs.five { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @media (max-width: 760px) {
   .game { grid-template-columns:1fr; }
   .game .art { min-height:300px; }
   .game .txt { padding:26px 22px; }
   .shots { grid-template-columns:repeat(2,minmax(0,1fr)); }
   section.about { grid-template-columns:1fr; }
-  .packs { grid-template-columns:1fr; }
+  .packs, .packs.five { grid-template-columns:1fr; }
   .pack img { height:240px; }
   header.top nav > a { display:none; }
 }
@@ -83,12 +87,14 @@ MARK = ('<svg viewBox="0 0 34 34" aria-hidden="true"><path d="M2 27c3-1 5-11 15-
 
 T = {
     "en": dict(
-        lang="en", base="", en_href="./", br_href="pt/",
+        lang="en", base="", en_href="./", br_href="pt/", es_href="es/",
         title="Studio Topeira", desc="Studio Topeira designs and builds apps and games for iPhone. Our first release is Iara: River of Lanterns.",
-        nav=[("#iara", "Iara"), ("#more", "More rivers"), ("#studio", "About"), ("mailto:" + EMAIL, "Contact")],
+        nav=[("#iara", "Iara"), ("#rivers", "Rivers"), ("#more", "Coming soon"), ("#studio", "About"), ("mailto:" + EMAIL, "Contact")],
         h1="Studio Topeira",
         lead="We design and build apps and games for iPhone. Our first release is Iara: River of Lanterns.",
-        more_kicker="Coming to Iara", more_title="More rivers",
+        rivers_kicker="In the game now", rivers_title="Five rivers of the Amazon",
+        rivers_lead="Twenty-five levels on five real waters, each with its own colour, its own banks and its own animals.",
+        more_kicker="Coming soon", more_title="More rivers",
         more_lead="After the Amazon, the lantern travels on: six journeys of 25 rivers each, across Brazil and South America. Every one a real place, with what really lives there.",
         kicker="Our first release", name="Iara: River of Lanterns",
         p1="Guide a lantern up five real rivers of the Amazon and bring it home to Iara, the keeper of the waters in Brazilian folklore.",
@@ -101,12 +107,14 @@ T = {
         contact="Contact", privacy="Privacy", support="Support", rights="© 2026 Studio Topeira",
     ),
     "pt": dict(
-        lang="pt-BR", base="../", en_href="../", br_href="./",
+        lang="pt-BR", base="../", en_href="../", br_href="./", es_href="../es/",
         title="Studio Topeira", desc="O Studio Topeira cria e desenvolve apps e jogos para iPhone. Nosso primeiro lançamento é Iara: River of Lanterns.",
-        nav=[("#iara", "Iara"), ("#more", "Mais rios"), ("#studio", "Sobre"), ("mailto:" + EMAIL, "Contato")],
+        nav=[("#iara", "Iara"), ("#rivers", "Rios"), ("#more", "Em breve"), ("#studio", "Sobre"), ("mailto:" + EMAIL, "Contato")],
         h1="Studio Topeira",
         lead="Criamos e desenvolvemos apps e jogos para iPhone. Nosso primeiro lançamento é Iara: River of Lanterns.",
-        more_kicker="Em breve no Iara", more_title="Mais rios",
+        rivers_kicker="No jogo agora", rivers_title="Cinco rios da Amazônia",
+        rivers_lead="Vinte e cinco fases em cinco águas de verdade, cada uma com a sua cor, as suas margens e os seus bichos.",
+        more_kicker="Em breve", more_title="Mais rios",
         more_lead="Depois da Amazônia, a lanterna segue viagem: seis jornadas de 25 rios cada, pelo Brasil e pela América do Sul. Cada uma um lugar de verdade, com o que realmente vive ali.",
         kicker="Nosso primeiro lançamento", name="Iara: River of Lanterns",
         p1="Leve uma lanterna por cinco rios de verdade da Amazônia até a Iara, a guardiã das águas no folclore brasileiro.",
@@ -117,6 +125,28 @@ T = {
                ("Como trabalhamos", "Pesquisamos antes de construir e testamos antes de lançar. No Iara, cada animal, planta e fato foi verificado em uma fonte antes de entrar."),
                ("Privacidade", "Nossos produtos não têm anúncios nem rastreamento, e não pedem conta. O Iara 1.0 não envia nada do seu celular.")],
         contact="Contato", privacy="Privacidade", support="Suporte", rights="© 2026 Studio Topeira",
+    ),
+    # Spanish (owner, 2026-10-04): the site only. Iara 1.0 itself is in English and Portuguese; Spanish comes to the
+    # game with the next version, so the page says so and shows the English screenshots.
+    "es": dict(
+        lang="es", base="../", en_href="../", br_href="../pt/", es_href="./",
+        title="Studio Topeira", desc="Studio Topeira diseña y desarrolla apps y juegos para iPhone. Nuestro primer lanzamiento es Iara: River of Lanterns.",
+        nav=[("#iara", "Iara"), ("#rivers", "Ríos"), ("#more", "Próximamente"), ("#studio", "Nosotros"), ("mailto:" + EMAIL, "Contacto")],
+        h1="Studio Topeira",
+        lead="Diseñamos y desarrollamos apps y juegos para iPhone. Nuestro primer lanzamiento es Iara: River of Lanterns.",
+        rivers_kicker="En el juego ahora", rivers_title="Cinco ríos de la Amazonía",
+        rivers_lead="Veinticinco niveles en cinco aguas reales, cada una con su color, sus orillas y sus animales.",
+        more_kicker="Próximamente", more_title="Más ríos",
+        more_lead="Después de la Amazonía, la linterna sigue su viaje: seis travesías de 25 ríos cada una, por Brasil y Sudamérica. Cada una es un lugar real, con lo que de verdad vive allí.",
+        kicker="Nuestro primer lanzamiento", name="Iara: River of Lanterns",
+        p1="Guía una linterna por cinco ríos reales de la Amazonía y llévala a casa, hasta Iara, la guardiana de las aguas en el folclore brasileño.",
+        p2="Un toque empuja la linterna. Ranas, caimanes, jaguares y el delfín rosado aparecen cada uno en el río donde realmente viven, y cada río te cuenta algo verdadero sobre él. En el modo Zen el río está a oscuras, nada ataca, y tu luz despierta lo que vive allí.",
+        facts=["iPhone", "Gratis", "25 ríos", "Sin anuncios, sin compras", "Sin cuenta", "English · Português", "Español: próximamente"],
+        soon="Próximamente en el App Store", get="Consíguelo en el App Store", shots="Capturas de Iara: River of Lanterns",
+        about=[("Qué hacemos", "Hacemos apps y juegos para iPhone, cada uno construido en torno a una idea clara. Hay nuevos títulos en desarrollo."),
+               ("Cómo trabajamos", "Investigamos antes de construir y probamos antes de publicar. En Iara, cada animal, planta y dato se verificó con una fuente antes de entrar."),
+               ("Privacidad", "Nuestros productos no llevan publicidad ni rastreo, y no piden cuenta. Iara 1.0 no envía nada desde tu teléfono.")],
+        contact="Contacto", privacy="Privacidad", support="Soporte", rights="© 2026 Studio Topeira",
     ),
 }
 
@@ -140,12 +170,12 @@ def head(t, title, base):
 
 
 def switch(t):
-    """EN | BR at the top right: the language showing is filled, the other is a link."""
-    en = t["lang"] == "en"
-    def side(label, name, href, on):
-        return (f'<span class="on" aria-current="true" title="{name}">{label}</span>' if on
-                else f'<a href="{href}" hreflang="{"en" if label == "EN" else "pt-BR"}" title="{name}">{label}</a>')
-    return f'<span class="switch" role="group" aria-label="Language">{side("EN", "English", t["en_href"], en)}{side("BR", "Português (Brasil)", t["br_href"], not en)}</span>'
+    """EN | BR | ES at the top right: the language showing is filled, the others are links."""
+    sides = [("EN", "English", "en", t["en_href"]), ("BR", "Português (Brasil)", "pt-BR", t["br_href"]), ("ES", "Español", "es", t["es_href"])]
+    return ('<span class="switch" role="group" aria-label="Language">'
+            + "".join(f'<span class="on" aria-current="true" title="{name}">{label}</span>' if code == t["lang"]
+                      else f'<a href="{href}" hreflang="{code}" title="{name}">{label}</a>' for label, name, code, href in sides)
+            + "</span>")
 
 
 def top(t, base, nav=True):
@@ -160,7 +190,8 @@ def foot(t, base):
 
 
 # The expansion packs, as a tease (owner, 2026-10-04): a painting, a name, a line and the five waters. No dates, no
-# prices, no list of animals. (id, English name, Portuguese name, English line, Portuguese line, the five waters)
+# prices, no list of animals. (id, English name, Portuguese name, English line, Portuguese line, the five waters);
+# PACKS_ES has each one's Spanish name and line, as the game has them.
 PACKS = [
     ("amazonia2", "Amazônia II", "Amazônia II", "The lakes, the rapids, the mud and the sea", "Os lagos, as corredeiras, a lama e o mar",
      "Mamirauá · Xingu · Madeira · Marajó · Rio Branco"),
@@ -176,17 +207,42 @@ PACKS = [
      "Iberá · Paraná · Uruguay · Valdivia · Patagonia"),
 ]
 
+# The five rivers the game has today (owner, 2026-10-04: "the existing biomes and then a coming soon section with the
+# new ones"): each one's painting, name and line, as the game has them (RiverLore). (id, {lang: name}, {lang: line})
+RIVERS = [
+    ("varzea", dict(en="Várzea", pt="Várzea", es="Várzea"),
+     dict(en="The forest the river floods every year", pt="A floresta que o rio inunda todo ano", es="La selva que el río inunda cada año")),
+    ("negro", dict(en="Rio Negro", pt="Rio Negro", es="Río Negro"),
+     dict(en="The river the colour of tea", pt="O rio da cor do chá", es="El río del color del té")),
+    ("tapajos", dict(en="Tapajós", pt="Tapajós", es="Tapajós"),
+     dict(en="Clear water and white sand", pt="Água clara e areia branca", es="Agua clara y arena blanca")),
+    ("igapo", dict(en="Igapó", pt="Igapó", es="Igapó"),
+     dict(en="Where the trees stand in the river", pt="Onde as árvores ficam dentro do rio", es="Donde los árboles están de pie en el río")),
+    ("encontro", dict(en="Encontro das Águas", pt="Encontro das Águas", es="Encuentro de las Aguas"),
+     dict(en="Two rivers that won't mix", pt="Dois rios que não se misturam", es="Dos ríos que no se mezclan")),
+]
+
+PACKS_ES = {'amazonia2': ('Amazonía II', 'Los lagos, los rápidos, el barro y el mar'),
+            'pantanal': ('Pantanal', 'El humedal más grande del mundo'),
+            'brasil': ('Aguas de Brasil', 'Del sertón a las grandes cataratas'),
+            'orinoco': ('El Orinoco y las Guayanas', 'Granito, llanos, un río de cinco colores'),
+            'andes': ('Los Andes', 'Los lagos de altura, el río sagrado, la bajada a la selva'),
+            'sul': ('El Sur', 'De los esteros del Iberá a los glaciares')}
+
 
 def home(code):
     t = T[code]; base = t["base"]
     cta = f'<a class="cta" href="{STORE}">{t["get"]}</a>' if STORE else f'<span class="cta">{t["soon"]}</span>'
-    shots = "".join(f'<img src="{base}assets/iara-{code}-{k}.jpg" alt="{t["shots"]} {k}" loading="lazy" width="507" height="1100">' for k in (1, 2, 3, 4))
+    shot = "en" if code == "es" else code          # no Spanish screenshots until the game ships in Spanish
+    shots = "".join(f'<img src="{base}assets/iara-{shot}-{k}.jpg" alt="{t["shots"]} {k}" loading="lazy" width="507" height="1100">' for k in (1, 2, 3, 4))
     about = "".join(f"<div><h3>{h}</h3><p>{p}</p></div>" for h, p in t["about"])
     pt = code == "pt"
     packs = "".join(f'<div class="pack"><img src="{base}assets/packs/{pid}.jpg" alt="" loading="lazy" width="514" height="900">'
-                    f'<div class="ptxt"><h3>{npt if pt else nen}</h3><p>{lpt if pt else len_}</p><p class="waters">{waters}</p></div></div>'
+                    f'<div class="ptxt"><h3>{PACKS_ES[pid][0] if code == "es" else npt if pt else nen}</h3><p>{PACKS_ES[pid][1] if code == "es" else lpt if pt else len_}</p><p class="waters">{waters}</p></div></div>'
                     for pid, nen, npt, len_, lpt, waters in PACKS)
     facts = "".join(f"<li>{f}</li>" for f in t["facts"])
+    rivers = "".join(f'<div class="pack"><img src="{base}assets/rivers/{rid}.jpg" alt="" loading="lazy" width="514" height="900">'
+                     f'<div class="ptxt"><h3>{names[code]}</h3><p>{lines[code]}</p></div></div>' for rid, names, lines in RIVERS)
     return (head(t, t["title"], base) + top(t, base) + f"""<div class="wrap">
 <section class="hero"><h1>{t['h1']}</h1><p>{t['lead']}</p></section>
 <section id="iara">
@@ -202,6 +258,12 @@ def home(code):
     </div>
   </div>
   <div class="shots">{shots}</div>
+</section>
+<section id="rivers">
+  <p class="kicker">{t['rivers_kicker']}</p>
+  <h2 class="more">{t['rivers_title']}</h2>
+  <p class="morelead">{t['rivers_lead']}</p>
+  <div class="packs five">{rivers}</div>
 </section>
 <section id="more">
   <p class="kicker">{t['more_kicker']}</p>
@@ -248,12 +310,14 @@ SUPPORT = f"""<h1>Support: Iara: River of Lanterns</h1>
 
 
 def doc(body, title):
-    t = dict(T["en"], base="../../", en_href="./", br_href="../../pt/")
+    t = dict(T["en"], base="../../", en_href="./", br_href="../../pt/", es_href="../../es/")
     return head(t, title, "../../") + top(t, "../../", nav=False) + f'<main class="doc">\n{body}\n</main>\n' + foot(t, "../../")
 
 
 (ROOT / "index.html").write_text(home("en"))
 (ROOT / "pt/index.html").write_text(home("pt"))
+(ROOT / "es").mkdir(exist_ok=True)
+(ROOT / "es/index.html").write_text(home("es"))
 (ROOT / "iara/privacy/index.html").write_text(doc(PRIVACY, "Privacy Policy: Iara: River of Lanterns"))
 (ROOT / "iara/support/index.html").write_text(doc(SUPPORT, "Support: Iara: River of Lanterns"))
 print("written: index.html, pt/index.html, iara/privacy/index.html, iara/support/index.html")

@@ -47,10 +47,13 @@ header.top nav { display:flex; align-items:center; }
 span.cta { opacity:.75; }
 .shots { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:28px 0 0; }
 .shots img { width:100%; height:auto; border-radius:20px; border:1px solid var(--rule); display:block; }
-#more { padding:9vh 0 0; }
+#more, #rivers { padding:9vh 0 0; }
 h2.more { font:700 clamp(2.6rem,7vw,4rem)/1 "Amatic SC",sans-serif; color:var(--gold); margin:0 0 .3em; letter-spacing:.03em; }
 .morelead { max-width:40rem; color:var(--muted); margin:0 0 26px; }
 .packs { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.packs.five { grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; }
+.packs.five .pack img { height:260px; }
+.packs.five .pack h3 { font-size:1.7rem; }
 .pack { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--rule); background:var(--panel); }
 .pack img { display:block; width:100%; height:320px; object-fit:cover; }
 .pack .ptxt { padding:16px 18px 18px; }
@@ -67,20 +70,21 @@ main.doc { max-width:44rem; margin:0 auto; padding:3vh 20px 4vh; }
 main.doc h1 { font:700 3rem/1.05 "Amatic SC",sans-serif; color:var(--gold); margin:.4em 0 .3em; }
 main.doc h2 { font-size:1.08rem; margin:2.2rem 0 .5rem; color:var(--fg); }
 main.doc p, main.doc li { color:#c9d4d8; }
+@media (max-width: 1040px) { .packs.five { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @media (max-width: 760px) {
   .game { grid-template-columns:1fr; }
   .game .art { min-height:300px; }
   .game .txt { padding:26px 22px; }
   .shots { grid-template-columns:repeat(2,minmax(0,1fr)); }
   section.about { grid-template-columns:1fr; }
-  .packs { grid-template-columns:1fr; }
+  .packs, .packs.five { grid-template-columns:1fr; }
   .pack img { height:240px; }
   header.top nav > a { display:none; }
 }
 </style>
 </head>
 <body>
-<div class="wrap"><header class="top"><a class="mark" href="./"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M2 27c3-1 5-11 15-11s12 10 15 11z" fill="#ffe3a8"/><circle cx="17" cy="9" r="3.2" fill="#f08a3c"/><circle cx="17" cy="9" r="6" fill="#f08a3c" opacity=".25"/></svg>Topeira</a><nav><a href="#iara">Iara</a><a href="#more">More rivers</a><a href="#studio">About</a><a href="mailto:hello@studiotopeira.com">Contact</a><span class="switch" role="group" aria-label="Language"><span class="on" aria-current="true" title="English">EN</span><a href="pt/" hreflang="pt-BR" title="Português (Brasil)">BR</a></span></nav></header></div>
+<div class="wrap"><header class="top"><a class="mark" href="./"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M2 27c3-1 5-11 15-11s12 10 15 11z" fill="#ffe3a8"/><circle cx="17" cy="9" r="3.2" fill="#f08a3c"/><circle cx="17" cy="9" r="6" fill="#f08a3c" opacity=".25"/></svg>Topeira</a><nav><a href="#iara">Iara</a><a href="#rivers">Rivers</a><a href="#more">Coming soon</a><a href="#studio">About</a><a href="mailto:hello@studiotopeira.com">Contact</a><span class="switch" role="group" aria-label="Language"><span class="on" aria-current="true" title="English">EN</span><a href="pt/" hreflang="pt-BR" title="Português (Brasil)">BR</a><a href="es/" hreflang="es" title="Español">ES</a></span></nav></header></div>
 <div class="wrap">
 <section class="hero"><h1>Studio Topeira</h1><p>We design and build apps and games for iPhone. Our first release is Iara: River of Lanterns.</p></section>
 <section id="iara">
@@ -97,8 +101,14 @@ main.doc p, main.doc li { color:#c9d4d8; }
   </div>
   <div class="shots"><img src="assets/iara-en-1.jpg" alt="Screenshots of Iara: River of Lanterns 1" loading="lazy" width="507" height="1100"><img src="assets/iara-en-2.jpg" alt="Screenshots of Iara: River of Lanterns 2" loading="lazy" width="507" height="1100"><img src="assets/iara-en-3.jpg" alt="Screenshots of Iara: River of Lanterns 3" loading="lazy" width="507" height="1100"><img src="assets/iara-en-4.jpg" alt="Screenshots of Iara: River of Lanterns 4" loading="lazy" width="507" height="1100"></div>
 </section>
+<section id="rivers">
+  <p class="kicker">In the game now</p>
+  <h2 class="more">Five rivers of the Amazon</h2>
+  <p class="morelead">Twenty-five levels on five real waters, each with its own colour, its own banks and its own animals.</p>
+  <div class="packs five"><div class="pack"><img src="assets/rivers/varzea.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Várzea</h3><p>The forest the river floods every year</p></div></div><div class="pack"><img src="assets/rivers/negro.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Rio Negro</h3><p>The river the colour of tea</p></div></div><div class="pack"><img src="assets/rivers/tapajos.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Tapajós</h3><p>Clear water and white sand</p></div></div><div class="pack"><img src="assets/rivers/igapo.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Igapó</h3><p>Where the trees stand in the river</p></div></div><div class="pack"><img src="assets/rivers/encontro.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Encontro das Águas</h3><p>Two rivers that won't mix</p></div></div></div>
+</section>
 <section id="more">
-  <p class="kicker">Coming to Iara</p>
+  <p class="kicker">Coming soon</p>
   <h2 class="more">More rivers</h2>
   <p class="morelead">After the Amazon, the lantern travels on: six journeys of 25 rivers each, across Brazil and South America. Every one a real place, with what really lives there.</p>
   <div class="packs"><div class="pack"><img src="assets/packs/amazonia2.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Amazônia II</h3><p>The lakes, the rapids, the mud and the sea</p><p class="waters">Mamirauá · Xingu · Madeira · Marajó · Rio Branco</p></div></div><div class="pack"><img src="assets/packs/pantanal.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Pantanal</h3><p>The largest wetland on Earth</p><p class="waters">Rio Paraguai · Rio Cuiabá · Rio Miranda · Baías e corixos · Nhecolândia</p></div></div><div class="pack"><img src="assets/packs/brasil.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>Waters of Brazil</h3><p>From the dry backlands to the great falls</p><p class="waters">São Francisco · Araguaia · Bonito · Jalapão · Iguaçu</p></div></div><div class="pack"><img src="assets/packs/orinoco.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>The Orinoco and the Guianas</h3><p>Granite, plains, a river of five colours</p><p class="waters">Orinoco · Los Llanos · Caño Cristales · Canaima · Kaieteur</p></div></div><div class="pack"><img src="assets/packs/andes.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>The Andes</h3><p>The high lakes, the sacred river, the way down to the forest</p><p class="waters">Titicaca · Laguna Colorada · Urubamba · Manu · Magdalena</p></div></div><div class="pack"><img src="assets/packs/sul.jpg" alt="" loading="lazy" width="514" height="900"><div class="ptxt"><h3>The South</h3><p>From the marshes of Iberá to the glaciers</p><p class="waters">Iberá · Paraná · Uruguay · Valdivia · Patagonia</p></div></div></div>

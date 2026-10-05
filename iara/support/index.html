@@ -47,10 +47,13 @@ header.top nav { display:flex; align-items:center; }
 span.cta { opacity:.75; }
 .shots { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:28px 0 0; }
 .shots img { width:100%; height:auto; border-radius:20px; border:1px solid var(--rule); display:block; }
-#more { padding:9vh 0 0; }
+#more, #rivers { padding:9vh 0 0; }
 h2.more { font:700 clamp(2.6rem,7vw,4rem)/1 "Amatic SC",sans-serif; color:var(--gold); margin:0 0 .3em; letter-spacing:.03em; }
 .morelead { max-width:40rem; color:var(--muted); margin:0 0 26px; }
 .packs { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.packs.five { grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; }
+.packs.five .pack img { height:260px; }
+.packs.five .pack h3 { font-size:1.7rem; }
 .pack { position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--rule); background:var(--panel); }
 .pack img { display:block; width:100%; height:320px; object-fit:cover; }
 .pack .ptxt { padding:16px 18px 18px; }
@@ -67,20 +70,21 @@ main.doc { max-width:44rem; margin:0 auto; padding:3vh 20px 4vh; }
 main.doc h1 { font:700 3rem/1.05 "Amatic SC",sans-serif; color:var(--gold); margin:.4em 0 .3em; }
 main.doc h2 { font-size:1.08rem; margin:2.2rem 0 .5rem; color:var(--fg); }
 main.doc p, main.doc li { color:#c9d4d8; }
+@media (max-width: 1040px) { .packs.five { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @media (max-width: 760px) {
   .game { grid-template-columns:1fr; }
   .game .art { min-height:300px; }
   .game .txt { padding:26px 22px; }
   .shots { grid-template-columns:repeat(2,minmax(0,1fr)); }
   section.about { grid-template-columns:1fr; }
-  .packs { grid-template-columns:1fr; }
+  .packs, .packs.five { grid-template-columns:1fr; }
   .pack img { height:240px; }
   header.top nav > a { display:none; }
 }
 </style>
 </head>
 <body>
-<div class="wrap"><header class="top"><a class="mark" href="../../"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M2 27c3-1 5-11 15-11s12 10 15 11z" fill="#ffe3a8"/><circle cx="17" cy="9" r="3.2" fill="#f08a3c"/><circle cx="17" cy="9" r="6" fill="#f08a3c" opacity=".25"/></svg>Topeira</a><nav><span class="switch" role="group" aria-label="Language"><span class="on" aria-current="true" title="English">EN</span><a href="../../pt/" hreflang="pt-BR" title="Português (Brasil)">BR</a></span></nav></header></div>
+<div class="wrap"><header class="top"><a class="mark" href="../../"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M2 27c3-1 5-11 15-11s12 10 15 11z" fill="#ffe3a8"/><circle cx="17" cy="9" r="3.2" fill="#f08a3c"/><circle cx="17" cy="9" r="6" fill="#f08a3c" opacity=".25"/></svg>Topeira</a><nav><span class="switch" role="group" aria-label="Language"><span class="on" aria-current="true" title="English">EN</span><a href="../../pt/" hreflang="pt-BR" title="Português (Brasil)">BR</a><a href="../../es/" hreflang="es" title="Español">ES</a></span></nav></header></div>
 <main class="doc">
 <h1>Support: Iara: River of Lanterns</h1>
 <p>Email <a href="mailto:hello@studiotopeira.com">hello@studiotopeira.com</a> and, if you can, tell us which iPhone and iOS version you have. We read every message.</p>
