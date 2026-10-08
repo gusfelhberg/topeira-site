@@ -97,11 +97,11 @@ T = {
         rivers_kicker="Free: the first 25 rivers", rivers_title="The rivers of the Amazon",
         rivers_lead="Twenty-five levels on five rivers, each with its own colour, its own banks and its own animals.",
         more_kicker="More rivers, in the game", more_title="The journey continues",
-        more_lead="After the Amazon, the lantern travels on: six journeys of 25 rivers each, across Brazil and South America. Each river is on the map, with the animals that live there. Each is bought once inside the game, and its first river can be tried free.",
+        more_lead="After the Amazon, the lantern travels on: six expansions of 25 rivers each, across Brazil and South America. Each river is on the map, with the animals that live there. Each is bought once inside the game, and its first river can be tried free.",
         kicker="Our first release", name="Iara: River of Lanterns",
         p1="Guide a lantern up the rivers of the Amazon and bring it home to Iara, the keeper of the waters in Brazilian folklore.",
         p2="One tap pushes the lantern. Frogs, caimans, jaguars and the pink river dolphin are each on the river where they live, and every river has something to tell you about it. In Zen the river is dark, nothing strikes, and your light wakes what lives there.",
-        p3="The first 25 rivers are free. More rivers are bought once inside the game: Into the night (rivers 26 to 60: Igarapé, Serra and the five rivers by night), six journeys of 25 rivers each, or all 185 more at once. The first river of each can be tried free.",
+        p3="The first 25 rivers are free. More rivers are bought once inside the game: Into the night (rivers 26 to 60: Igarapé, Serra and the five rivers by night), six expansions of 25 rivers each, or all 185 more at once. The first river of each can be tried free.",
         facts=["iPhone and Android", "Free to start: 25 rivers", "More rivers, bought once", "No ads, no subscription", "No account", "English · Português · Español"],
         soon="Coming soon to the App Store and Google Play", soon_ios="Coming soon to the App Store", soon_android="Coming soon to Google Play",
         get_ios="Get it on the App Store", get_android="Get it on Google Play", shots="Screenshots of Iara: River of Lanterns",
@@ -119,11 +119,11 @@ T = {
         rivers_kicker="Os 25 primeiros rios são grátis", rivers_title="Os rios da Amazônia",
         rivers_lead="Vinte e cinco fases em cinco rios, cada um com sua cor, suas margens e seus bichos.",
         more_kicker="Mais rios dentro do jogo", more_title="A viagem continua",
-        more_lead="Depois da Amazônia, a lanterna segue viagem: são seis jornadas de 25 rios cada, pelo Brasil e pela América do Sul. Cada rio está no mapa, com os bichos que vivem lá. Você compra cada jornada uma vez só, dentro do jogo, e dá para experimentar o primeiro rio de graça.",
+        more_lead="Depois da Amazônia, a lanterna segue viagem: são seis expansões de 25 rios cada, pelo Brasil e pela América do Sul. Cada rio está no mapa, com os bichos que vivem lá. Você compra cada jornada uma vez só, dentro do jogo, e dá para experimentar o primeiro rio de graça.",
         kicker="Nosso primeiro lançamento", name="Iara: River of Lanterns",
         p1="Guie uma lanterna pelos rios da Amazônia até Iara, a senhora das águas do folclore brasileiro.",
         p2="Com um toque você empurra a lanterna. Sapos, jacarés, onças e o boto-cor-de-rosa só aparecem nos rios onde vivem, e cada rio traz uma curiosidade sobre ele. No modo Zen o rio fica escuro, nada ataca, e a sua luz vai acordando o que vive ali.",
-        p3="Os 25 primeiros rios são grátis. Os outros você compra uma vez só, dentro do jogo: Noite adentro (rios 26 a 60: Igarapé, Serra e os cinco rios à noite), seis jornadas de 25 rios cada, ou os outros 185 de uma vez. Dá para experimentar de graça o primeiro rio de cada uma.",
+        p3="Os 25 primeiros rios são grátis. Os outros você compra uma vez só, dentro do jogo: Noite adentro (rios 26 a 60: Igarapé, Serra e os cinco rios à noite), seis expansões de 25 rios cada, ou os outros 185 de uma vez. Dá para experimentar de graça o primeiro rio de cada uma.",
         facts=["iPhone e Android", "Comece grátis: 25 rios", "Mais rios: pague uma vez só", "Sem anúncios, sem assinatura", "Sem cadastro", "English · Português · Español"],
         soon="Em breve na App Store e no Google Play", soon_ios="Em breve na App Store", soon_android="Em breve no Google Play",
         get_ios="Baixar na App Store", get_android="Disponível no Google Play", shots="Telas de Iara: River of Lanterns",
@@ -144,11 +144,11 @@ T = {
         rivers_kicker="Los primeros 25 ríos son gratis", rivers_title="Los ríos de la Amazonía",
         rivers_lead="Veinticinco niveles en cinco ríos, cada uno con su color, sus orillas y sus animales.",
         more_kicker="Más ríos dentro del juego", more_title="El viaje continúa",
-        more_lead="Después de la Amazonía, la linterna sigue su viaje: seis travesías de 25 ríos cada una, por Brasil y el resto de Sudamérica. Cada río está en el mapa, con los animales que viven allí. Cada travesía se compra una sola vez, dentro del juego, y su primer río se puede probar gratis.",
+        more_lead="Después de la Amazonía, la linterna sigue su viaje: seis expansiones de 25 ríos cada una, por Brasil y el resto de Sudamérica. Cada río está en el mapa, con los animales que viven allí. Cada travesía se compra una sola vez, dentro del juego, y su primer río se puede probar gratis.",
         kicker="Nuestro primer lanzamiento", name="Iara: River of Lanterns",
         p1="Guía una linterna por los ríos de la Amazonía hasta Iara, la señora de las aguas del folclore brasileño.",
         p2="Con un toque empujas la linterna. Ranas, caimanes, jaguares y el delfín rosado solo aparecen en los ríos donde viven, y cada río te cuenta algo sobre él. En el modo Zen el río está a oscuras, nada ataca y tu luz va despertando lo que vive allí.",
-        p3="Los primeros 25 ríos son gratis. Los demás se compran una sola vez, dentro del juego: Hacia la noche (ríos 26 a 60: Igarapé, Serra y los cinco ríos de noche), seis travesías de 25 ríos cada una, o los otros 185 de una vez. El primer río de cada una se puede probar gratis.",
+        p3="Los primeros 25 ríos son gratis. Los demás se compran una sola vez, dentro del juego: Hacia la noche (ríos 26 a 60: Igarapé, Serra y los cinco ríos de noche), seis expansiones de 25 ríos cada una, o los otros 185 de una vez. El primer río de cada una se puede probar gratis.",
         facts=["iPhone y Android", "Empieza gratis: 25 ríos", "Más ríos: un solo pago", "Sin anuncios ni suscripción", "Sin registro", "English · Português · Español"],
         soon="Próximamente en el App Store y Google Play", soon_ios="Próximamente en el App Store", soon_android="Próximamente en Google Play",
         get_ios="Consíguelo en el App Store", get_android="Disponible en Google Play", shots="Capturas de Iara: River of Lanterns",
@@ -213,7 +213,7 @@ PACKS = [
     ("andes", "The Andes", "Os Andes", "The high lakes, the sacred river, the way down to the forest", "Os lagos do alto, o rio sagrado, a descida até a floresta",
      "Titicaca · Laguna Colorada · Urubamba · Manu · Magdalena"),
     ("sul", "The South", "O Sul", "From the marshes of Iberá to the glaciers", "Dos esteros do Iberá às geleiras",
-     "Iberá · Paraná · Uruguay · Valdivia · Patagonia"),
+     "Esteros del Iberá · Paraná · Río Uruguay · Valdivian Forest · The Glaciers"),
 ]
 
 # The five rivers of the free game (its first 25 rivers), above the packs: each one's painting, name and line, as the game has them (RiverLore). (id, {lang: name}, {lang: line})
@@ -318,7 +318,7 @@ SUPPORT = f"""<h1>Support: Iara: River of Lanterns</h1>
 <h2>Is the game free?</h2>
 <p>It is free to start: the first 25 rivers are free. There are no ads, no subscription and no account.</p>
 <h2>What can I buy?</h2>
-<p>More rivers: Into the night (rivers 26 to 60), six journeys of 25 rivers each, or all of them at once. Each is bought once, inside the game, and is yours to keep. You can try the first river of each before buying.</p>
+<p>More rivers: Into the night (rivers 26 to 60), six expansions of 25 rivers each, or all of them at once. Each is bought once, inside the game, and is yours to keep. You can try the first river of each before buying.</p>
 <h2>How do I get my purchases back on a new phone?</h2>
 <p>Open the game's Settings and choose "Restore purchases". A purchase belongs to the Apple or Google account it was made with, and does not carry between iPhone and Android.</p>
 <h2>Can I get a refund?</h2>
