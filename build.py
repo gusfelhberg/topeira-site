@@ -9,6 +9,7 @@ STORE_IOS = ""      # Iara's App Store address once it is live there; empty show
 STORE_ANDROID = ""  # Iara's Google Play address once it is live there; empty shows "Coming soon"
 
 CSS = """
+@font-face { font-family: "Nunito"; src: url("%(base)sassets/Nunito.ttf") format("truetype"); font-weight: 200 1000; font-display: swap; }
 @font-face { font-family: "Amatic SC"; src: url("%(base)sassets/AmaticSC-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
 :root { --teal:#12302f; --amber:#f6c45c; --cream:#faf1de; --bg:#0b1418; --panel:#12212a; --rule:#22343c; --fg:#e9eef0; --muted:#9db0b6; --gold:#ffe3a8; --ember:#f08a3c; }
 * { box-sizing: border-box; }
@@ -20,8 +21,8 @@ a { color:var(--gold); }
 header.top { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
 .mark { display:flex; align-items:center; gap:12px; color:var(--cream); text-decoration:none; }
 .mark svg { width:40px; height:36px; flex:none; }
-.mark b { display:block; font:700 1.55rem/1 "Avenir Next","Avenir","Nunito","Helvetica Neue",Arial,sans-serif; letter-spacing:-.01em; }
-.mark small { display:block; font:600 .52rem/1 "Avenir Next","Avenir","Nunito","Helvetica Neue",Arial,sans-serif; letter-spacing:.42em; color:var(--amber); margin-top:5px; }
+.mark b { display:block; font:800 1.55rem/1 "Nunito","Avenir Next","Helvetica Neue",Arial,sans-serif; letter-spacing:-.01em; }
+.mark small { display:block; font:700 .52rem/1 "Nunito","Avenir Next","Helvetica Neue",Arial,sans-serif; letter-spacing:.42em; color:var(--amber); margin-top:5px; }
 .ident { max-width:60rem; margin:34px auto 0; border-radius:26px; overflow:hidden; border:1px solid var(--rule); background:var(--teal); line-height:0; }
 .ident video { width:100%%; height:auto; display:block; }
 .mark svg { width:34px; height:34px; }
