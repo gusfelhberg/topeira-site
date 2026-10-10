@@ -10,7 +10,7 @@ STORE_ANDROID = ""  # Iara's Google Play address once it is live there; empty sh
 
 CSS = """
 @font-face { font-family: "Amatic SC"; src: url("%(base)sassets/AmaticSC-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
-:root { --bg:#0b1418; --panel:#12212a; --rule:#22343c; --fg:#e9eef0; --muted:#9db0b6; --gold:#ffe3a8; --ember:#f08a3c; }
+:root { --teal:#12302f; --amber:#f6c45c; --cream:#faf1de; --bg:#0b1418; --panel:#12212a; --rule:#22343c; --fg:#e9eef0; --muted:#9db0b6; --gold:#ffe3a8; --ember:#f08a3c; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin:0; background:var(--bg); color:var(--fg); -webkit-text-size-adjust:100%%;
@@ -18,8 +18,12 @@ body { margin:0; background:var(--bg); color:var(--fg); -webkit-text-size-adjust
 a { color:var(--gold); }
 .wrap { max-width:66rem; margin:0 auto; padding:0 20px; }
 header.top { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
-.mark { display:flex; align-items:center; gap:10px; color:var(--gold); text-decoration:none;
-        font:700 2rem/1 "Amatic SC",sans-serif; letter-spacing:.04em; }
+.mark { display:flex; align-items:center; gap:12px; color:var(--cream); text-decoration:none; }
+.mark svg { width:40px; height:36px; flex:none; }
+.mark b { display:block; font:700 1.55rem/1 "Avenir Next","Avenir","Nunito","Helvetica Neue",Arial,sans-serif; letter-spacing:-.01em; }
+.mark small { display:block; font:600 .52rem/1 "Avenir Next","Avenir","Nunito","Helvetica Neue",Arial,sans-serif; letter-spacing:.42em; color:var(--amber); margin-top:5px; }
+.ident { max-width:60rem; margin:34px auto 0; border-radius:26px; overflow:hidden; border:1px solid var(--rule); background:var(--teal); line-height:0; }
+.ident video { width:100%%; height:auto; display:block; }
 .mark svg { width:34px; height:34px; }
 header.top nav a { color:var(--muted); text-decoration:none; font-size:.9rem; margin-left:18px; }
 header.top nav a:hover { color:var(--gold); }
@@ -83,9 +87,10 @@ main.doc p, main.doc li { color:#c9d4d8; }
 }
 """
 
-# a molehill with a small light on top: the studio's mark until a drawn one exists
-MARK = ('<svg viewBox="0 0 34 34" aria-hidden="true"><path d="M2 27c3-1 5-11 15-11s12 10 15 11z" fill="#ffe3a8"/>'
-        '<circle cx="17" cy="9" r="3.2" fill="#f08a3c"/><circle cx="17" cy="9" r="6" fill="#f08a3c" opacity=".25"/></svg>')
+# the studio's mark (hq/company/brand/logo/v2/e-arch.svg): the mole's hole with a small light in it, on the ground line
+MARK = ('<svg viewBox="40 40 120 120" aria-hidden="true"><path d="M30 150 H170" stroke="#7a5236" stroke-width="6" stroke-linecap="round"/>'
+        '<path d="M58 150 V104 a42 42 0 0 1 84 0 V150Z" fill="#0b1418" stroke="#faf1de" stroke-width="8" stroke-linejoin="round"/>'
+        '<circle cx="100" cy="128" r="9" fill="#f6c45c"/></svg>')
 
 T = {
     "en": dict(
@@ -170,8 +175,10 @@ def head(t, title, base):
 <meta name="description" content="{t['desc']}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{t['desc']}">
-<meta property="og:image" content="https://studiotopeira.com/assets/iara-splash.jpg">
-<link rel="icon" href="{base}assets/iara-icon.png">
+<meta property="og:image" content="https://studiotopeira.com/assets/studio-og.jpg">
+<meta name="theme-color" content="#12302f">
+<link rel="icon" type="image/png" sizes="64x64" href="{base}assets/favicon-64.png">
+<link rel="apple-touch-icon" href="{base}assets/apple-touch-icon.png">
 <style>{CSS % dict(base=base)}</style>
 </head>
 <body>
@@ -189,7 +196,7 @@ def switch(t):
 
 def top(t, base, nav=True):
     links = "".join(f'<a href="{h}">{n}</a>' for h, n in t["nav"]) if nav else ""
-    return (f'<div class="wrap"><header class="top"><a class="mark" href="{base or "./"}">{MARK}Topeira</a>'
+    return (f'<div class="wrap"><header class="top"><a class="mark" href="{base or "./"}">{MARK}<span><b>topeira</b><small>STUDIO</small></span></a>'
             f'<nav>{links}{switch(t)}</nav></header></div>\n')
 
 
@@ -257,7 +264,8 @@ def home(code):
     rivers = "".join(f'<div class="pack"><img src="{base}assets/rivers/{rid}.jpg" alt="" loading="lazy" width="514" height="900">'
                      f'<div class="ptxt"><h3>{names[code]}</h3><p>{lines[code]}</p></div></div>' for rid, names, lines in RIVERS)
     return (head(t, t["title"], base) + top(t, base) + f"""<div class="wrap">
-<section class="hero"><h1>{t['h1']}</h1><p>{t['lead']}</p></section>
+<section class="hero"><h1>{t['h1']}</h1><p>{t['lead']}</p>
+<div class="ident"><video controls playsinline preload="none" poster="{base}assets/studio-ident-poster.jpg" aria-label="Studio Topeira"><source src="{base}assets/studio-ident.mp4" type="video/mp4"></video></div></section>
 <section id="iara">
   <div class="game">
     <div class="art" role="img" aria-label="Iara"></div>
