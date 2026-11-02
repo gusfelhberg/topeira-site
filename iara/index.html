@@ -45,7 +45,11 @@ header.top nav { display:flex; align-items:center; }
 .cta { display:inline-block; border:1.5px solid var(--gold); color:var(--gold); border-radius:999px; padding:10px 24px;
        font:700 1.5rem/1.15 "Amatic SC",sans-serif; letter-spacing:.05em; text-decoration:none; text-align:center; }
 span.cta { opacity:.75; }
-.ctas { display:flex; flex-wrap:wrap; gap:10px; }
+.badge { display:inline-block; line-height:0; }
+.badge img { display:block; }
+.badge.ios img { height:50px; width:auto; }
+.badge.android img { height:72px; width:auto; margin:-11px -10px; }
+.ctas { display:flex; align-items:center; flex-wrap:wrap; gap:10px; }
 .shots { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:28px 0 0; }
 .shots img { width:100%; height:auto; border-radius:20px; border:1px solid var(--rule); display:block; }
 #more, #rivers { padding:9vh 0 0; }
@@ -89,7 +93,7 @@ main.doc p, main.doc li { color:#c9d4d8; }
 <main class="doc">
 <h1>Iara: River of Lanterns</h1>
 <p>Guide a lantern up the rivers of the Amazon and bring it home to Iara. Free to start. No ads, no subscription, no account.</p>
-<p><a class="cta" id="ios" href="https://apps.apple.com/app/id6814858718">Get it on the App Store</a> <a class="cta" id="android" href="https://play.google.com/store/apps/details?id=com.studiotopeira.iara">Get it on Google Play</a></p>
+<div class="ctas"><a class="badge ios" href="https://apps.apple.com/app/id6814858718"><img src="../assets/badges/appstore-en.svg" alt="Download on the App Store"></a><a class="badge android" href="https://play.google.com/store/apps/details?id=com.studiotopeira.iara"><img src="../assets/badges/googleplay-en.png" alt="Get it on Google Play"></a></div>
 <p><small>Leve uma lanterna pelos rios da Amazônia até a Iara. Grátis para começar. &nbsp;·&nbsp; Lleva una linterna por los ríos de la Amazonía hasta Iara. Gratis para empezar.</small></p>
 <script>
 (function () {

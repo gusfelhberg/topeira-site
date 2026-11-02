@@ -45,7 +45,11 @@ header.top nav { display:flex; align-items:center; }
 .cta { display:inline-block; border:1.5px solid var(--gold); color:var(--gold); border-radius:999px; padding:10px 24px;
        font:700 1.5rem/1.15 "Amatic SC",sans-serif; letter-spacing:.05em; text-decoration:none; text-align:center; }
 span.cta { opacity:.75; }
-.ctas { display:flex; flex-wrap:wrap; gap:10px; }
+.badge { display:inline-block; line-height:0; }
+.badge img { display:block; }
+.badge.ios img { height:50px; width:auto; }
+.badge.android img { height:72px; width:auto; margin:-11px -10px; }
+.ctas { display:flex; align-items:center; flex-wrap:wrap; gap:10px; }
 .shots { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:28px 0 0; }
 .shots img { width:100%; height:auto; border-radius:20px; border:1px solid var(--rule); display:block; }
 #more, #rivers { padding:9vh 0 0; }

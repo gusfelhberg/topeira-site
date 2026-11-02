@@ -44,7 +44,11 @@ header.top nav { display:flex; align-items:center; }
 .cta { display:inline-block; border:1.5px solid var(--gold); color:var(--gold); border-radius:999px; padding:10px 24px;
        font:700 1.5rem/1.15 "Amatic SC",sans-serif; letter-spacing:.05em; text-decoration:none; text-align:center; }
 span.cta { opacity:.75; }
-.ctas { display:flex; flex-wrap:wrap; gap:10px; }
+.badge { display:inline-block; line-height:0; }
+.badge img { display:block; }
+.badge.ios img { height:50px; width:auto; }
+.badge.android img { height:72px; width:auto; margin:-11px -10px; }
+.ctas { display:flex; align-items:center; flex-wrap:wrap; gap:10px; }
 .shots { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:28px 0 0; }
 .shots img { width:100%%; height:auto; border-radius:20px; border:1px solid var(--rule); display:block; }
 #more, #rivers { padding:9vh 0 0; }
@@ -238,14 +242,18 @@ PACKS_ES = {'amazonia2': ('Amazonía II', 'Los lagos, los rápidos, el barro y e
             'sul': ('El Sur', 'De los esteros del Iberá a los glaciares')}
 
 
+def badges(code, base):
+    """The stores' own badges (Apple's and Google's artwork, unaltered), one link each; a store with no address is left out."""
+    alt = {"en": ("Download on the App Store", "Get it on Google Play"), "pt": ("Baixar na App Store", "Disponível no Google Play"),
+           "es": ("Descargar en el App Store", "Disponible en Google Play")}[code]
+    out = []
+    if STORE_IOS: out.append(f'<a class="badge ios" href="{STORE_IOS}"><img src="{base}assets/badges/appstore-{code}.svg" alt="{alt[0]}"></a>')
+    if STORE_ANDROID: out.append(f'<a class="badge android" href="{STORE_ANDROID}"><img src="{base}assets/badges/googleplay-{code}.png" alt="{alt[1]}"></a>')
+    return '<div class="ctas">' + "".join(out) + "</div>"
+
 def home(code):
     t = T[code]; base = t["base"]
-    if STORE_IOS or STORE_ANDROID:   # a link for each store the game is live on, "coming soon" for the other
-        cta = '<div class="ctas">' + "".join(
-            f'<a class="cta" href="{url}">{t["get_" + k]}</a>' if url else f'<span class="cta">{t["soon_" + k]}</span>'
-            for k, url in (("ios", STORE_IOS), ("android", STORE_ANDROID))) + "</div>"
-    else:
-        cta = f'<span class="cta">{t["soon"]}</span>'
+    cta = badges(code, base) if (STORE_IOS or STORE_ANDROID) else f'<span class="cta">{t["soon"]}</span>'
     shot = code
     shots = "".join(f'<img src="{base}assets/iara-{shot}-{k}.jpg" alt="{t["shots"]} {k}" loading="lazy" width="507" height="1100">' for k in (1, 2, 3, 4))
     about = "".join(f"<div><h3>{h}</h3><p>{p}</p></div>" for h, p in t["about"])
@@ -345,7 +353,7 @@ def doc(body, title):
 
 GET = f"""<h1>Iara: River of Lanterns</h1>
 <p>Guide a lantern up the rivers of the Amazon and bring it home to Iara. Free to start. No ads, no subscription, no account.</p>
-<p><a class="cta" id="ios" href="{STORE_IOS}">Get it on the App Store</a> <a class="cta" id="android" href="{STORE_ANDROID}">Get it on Google Play</a></p>
+{badges("en", "../")}
 <p><small>Leve uma lanterna pelos rios da Amazônia até a Iara. Grátis para começar. &nbsp;·&nbsp; Lleva una linterna por los ríos de la Amazonía hasta Iara. Gratis para empezar.</small></p>
 <script>
 (function () {{
