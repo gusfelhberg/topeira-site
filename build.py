@@ -363,4 +363,11 @@ GET = f"""<h1>Iara: River of Lanterns</h1>
 }})();
 </script>"""
 (ROOT / "iara/index.html").write_text(doc(GET, "Iara: River of Lanterns"))
-print("written: index.html, pt/index.html, es/index.html, iara/privacy/index.html, iara/support/index.html, iara/index.html")
+(ROOT / "br").mkdir(exist_ok=True)
+(ROOT / "br/index.html").write_text(
+    '<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Studio Topeira</title>'
+    '<meta name="viewport" content="width=device-width,initial-scale=1">'
+    '<link rel="canonical" href="https://studiotopeira.com/pt/">'
+    '<meta http-equiv="refresh" content="0; url=../pt/"><script>location.replace("../pt/");</script></head>'
+    '<body><p><a href="../pt/">Studio Topeira em português</a></p></body></html>')
+print("written: index.html, pt/index.html, br/index.html, es/index.html, iara/privacy/index.html, iara/support/index.html, iara/index.html")
